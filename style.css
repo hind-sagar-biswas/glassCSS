@@ -1,0 +1,65 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	width: 100vw;
+	height: 100vh;
+	background: black;
+	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIexFnuY5gTWSzGbkpzDV0dia3F5pYPLG_iA&usqp=CAU);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+.pad{
+	padding: 10px;
+}
+#result{
+	width: 100%;
+	outline: none !important;
+	padding: 10px;
+	color: white;
+	background: rgba( 255, 255, 255, 0.40 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.40 );
+	backdrop-filter: blur( 5px );
+-webkit-backdrop-filter: blur( 4px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+#showDemo{
+	color: white;
+}
+#clickToCopy{
+	background: rgba( 255, 255, 255, 0.40 );
+	box-shadow: 0 16px 32px 0 rgba( 31, 38, 135, 0.80 );
+	backdrop-filter: blur( 5px );
+-webkit-backdrop-filter: blur( 5px );
+	border-radius: 10px;
+	width: 200px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	color: white;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	outline: none !important;
+	transition: all 0.3s;
+}
+#clickToCopy:hover{
+	color: grey;
+	background: rgba( 255, 255, 255, 0.7 );
+}
+#clickToCopy:click{
+	box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.80 );
+}
+header{
+	background: rgba( 255, 255, 255, 0.35 );
+	width: 100vw;
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 0px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
