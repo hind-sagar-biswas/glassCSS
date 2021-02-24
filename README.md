@@ -21,6 +21,20 @@ Glassmorphism is a unified name for the popular Frosted Glass aesthetic. It has 
 
 The effect is based on background blur with transparency, and uses stacked layers to show the depth and context of the interface.
 
+## Clone Repo
+
+#### Git CLI
+
+```
+gh repo clone hind-sagar-biswas/glassCSS
+```
+
+#### HTTPS
+
+```
+https://github.com/hind-sagar-biswas/glassCSS.git
+```
+
 ## CSS code
 
 General CSS code for glassmorphism
