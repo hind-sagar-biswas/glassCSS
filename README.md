@@ -1,5 +1,14 @@
 # glassCSS
 
+![Project Type](https://img.shields.io/static/v1?label=type&message=tool&color=blue)
+![Main Language](https://img.shields.io/static/v1?label=language&message=JavaScript&color=yellow&logoColor=yellow&logo=javascript)
+![Used Framework](https://img.shields.io/static/v1?label=framework&message=bootstrap&color=blue&logoColor=ffffff&logo=bootstrap)
+
+![Latest stable version](https://img.shields.io/static/v1?label=version&message=1.0&color=red)
+![Website Up](https://img.shields.io/static/v1?label=website&message=up&color=green)
+![Maintenance Yes](https://img.shields.io/static/v1?label=maintained&message=yes&color=green)
+![PRs welcome](https://img.shields.io/static/v1?label=PSs&message=welcome&color=brightgreen)
+
 ![Glassmorphism](glassmorphism.jpeg)
 
 A Glassmorphism CSS code generator tool
@@ -30,3 +39,12 @@ Use the above code to any `element` to give it a glass morphic effect.
 ## License
 
 This code has been licensed under `GNU AGPLv3` open source copyleft license. 
+
+## Author
+
+***Hind Sagar Biswas***
+
+**Website:** [https://hindbiswas.000webhostapp.com/](https://hindbiswas.000webhostapp.com/)
+
+[![Author Facebook](https://img.shields.io/static/v1?label=facebook&message=hindsagar.biswas&style=social&logo=facebook)](https://m.facebook.com/hindsagar.biswas)
+[![Author Twitter](https://img.shields.io/static/v1?label=twitter&message=@hind_biswas&style=social&logo=twitter)](https://twitter.com/hind_biswas)
