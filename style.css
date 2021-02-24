@@ -139,6 +139,6 @@ header{
 }
 @media(max-width: 768px){
 	#result{
-		height: 255px;
+		height: 155px;
 	}
 }
