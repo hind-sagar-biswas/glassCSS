@@ -8,6 +8,7 @@ body{
 	height: 100vh;
 	background: black;
 	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIexFnuY5gTWSzGbkpzDV0dia3F5pYPLG_iA&usqp=CAU);
+	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUNl-Oo1969U9gnY7Im3zQc-x22hzIvdlMQg&usqp=CAU);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -15,26 +16,57 @@ body{
 .pad{
 	padding: 10px;
 }
-#result{
-	width: 100%;
-	outline: none !important;
-	padding: 10px;
+#generator div.pad{
+	background: #3fb6ff;
 	color: white;
-	background: rgba( 255, 255, 255, 0.40 );
+	border-radius: 10px;
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.40 );
+}
+.dark-glass{
+	color: white;
+	background: rgba( 0, 0, 0, 0.40 );
 	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.40 );
 	backdrop-filter: blur( 5px );
 -webkit-backdrop-filter: blur( 4px );
 	border-radius: 10px;
 	border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-#showDemo{
-	color: white;
+#result{
+	width: 100%;
+	outline: none !important;
+	padding: 10px;
 }
-#clickToCopy{
-	background: rgba( 255, 255, 255, 0.40 );
-	box-shadow: 0 16px 32px 0 rgba( 31, 38, 135, 0.80 );
-	backdrop-filter: blur( 5px );
--webkit-backdrop-filter: blur( 5px );
+.demoGroup{
+	position: relative;
+	height: 240px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#showDemo{
+	color: grey;
+	height: 240px;
+	width: 270px;
+	left: 30px;
+}
+#up{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -5px;
+	left: 5px;
+	z-index: 1;
+}
+#down{
+	width: 80px;
+	height: 80px;
+	bottom: -25px;
+	right: 0px;
+	position: absolute;
+}
+#clickToCopy, #color-picker{
+	background: #3fb6ff;
+	box-shadow: 0 4px 7px 0 rgba( 31, 38, 135, 0.80 );
 	border-radius: 10px;
 	width: 200px;
 	height: 50px;
@@ -48,18 +80,25 @@ body{
 	transition: all 0.3s;
 }
 #clickToCopy:hover{
-	color: grey;
-	background: rgba( 255, 255, 255, 0.7 );
+	background: #3fb6ffee;
 }
 #clickToCopy:click{
-	box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.80 );
+	box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.80 );
 }
 header{
 	background: rgba( 255, 255, 255, 0.35 );
 	width: 100vw;
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
 border-radius: 0px;
 border: 1px solid rgba( 255, 255, 255, 0.18 );
+background: rgba( 225, 225, 225, 0.40 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.40 );
+	backdrop-filter: blur( 5px );
+-webkit-backdrop-filter: blur( 4px );
+}
+@media(min-width: 768px){
+	.flex{
+		display: flex;
+		justify-content: space-around;
+	}
 }
