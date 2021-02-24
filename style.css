@@ -138,7 +138,5 @@ header{
 	}
 }
 @media(max-width: 768px){
-	#result{
-		height: 155px;
-	}
+	
 }
