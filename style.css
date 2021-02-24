@@ -1,3 +1,4 @@
+
 *{
 	margin: 0;
 	padding: 0;
@@ -6,6 +7,7 @@
 body{
 	width: 100vw;
 	height: 100vh;
+	font-family: sans-serif;
 	background: black;
 	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIexFnuY5gTWSzGbkpzDV0dia3F5pYPLG_iA&usqp=CAU);
 	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUNl-Oo1969U9gnY7Im3zQc-x22hzIvdlMQg&usqp=CAU);
@@ -64,7 +66,7 @@ body{
 	right: 0px;
 	position: absolute;
 }
-#clickToCopy, #color-picker{
+#clickToCopy, .color-picker{
 	background: #3fb6ff;
 	box-shadow: 0 4px 7px 0 rgba( 31, 38, 135, 0.80 );
 	border-radius: 10px;
@@ -78,6 +80,9 @@ body{
 	border: 1px solid rgba( 255, 255, 255, 0.18 );
 	outline: none !important;
 	transition: all 0.3s;
+}
+#color-display{
+	width: 50px;
 }
 #clickToCopy:hover{
 	background: #3fb6ffee;
@@ -100,5 +105,13 @@ background: rgba( 225, 225, 225, 0.40 );
 	.flex{
 		display: flex;
 		justify-content: space-around;
+	}
+	.one-third{
+	width: calc(100% / 3.1);
+}
+}
+@media(max-width: 768px){
+	#result{
+		height: 400px;
 	}
 }

@@ -66,12 +66,24 @@
 				<label for="opacity" id="opacityLabel">Opacity</label>
 				<input type="range" class="custom-range" id="opacity" name="opacity" min="0" max="100" value="30" step="5">
 				
-				<div class="custom-control custom-switch mb-1">
+				<div class="custom-control custom-switch mb-3 mt-1">
     <input type="checkbox" class="custom-control-input" id="haveBorder" onclick="toggleBorder()" checked>
     <label class="custom-control-label" for="haveBorder">Border</label>
   </div>
-  <div>
-  <button id="color-picker" class="color-picker">Color</button>
+  <h4>Color</h4>
+  <div class="flex">
+  	<div class="one-third">
+  		<label for="red" id="redLabel">red</label>
+				<input type="range" class="custom-range" id="red" name="red" min="0" max="225" value="225">
+  	</div>
+  	<div class="one-third">
+  		<label for="green" id="greenLabel">green</label>
+				<input type="range" class="custom-range" id="green" name="green" min="0" max="225" value="225">
+  	</div>
+  	<div class="one-third">
+  		<label for="blue" id="blueLabel">blue</label>
+				<input type="range" class="custom-range" id="blue" name="blue" min="0" max="225" value="225">
+  	</div>
   </div>
   </div>
 			</div>

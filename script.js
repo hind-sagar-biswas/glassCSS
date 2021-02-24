@@ -1,8 +1,5 @@
 //VARIABLES
-var blur = 12.5;
-var opacity = 0.35;
-var haveBorder = true;
-var cssCode;
+
 
 //SELECTORS
 const blurInput = document.getElementById("blur");
@@ -13,50 +10,83 @@ document.getElementById("showDemo"),
 document.getElementById("up"),
 document.getElementById("down")
 ];
+const rgbInput = [
+document.getElementById("red"),
+document.getElementById("green"),
+document.getElementById("blue")
+];
+const rgbLabel = [
+document.getElementById("redLabel"),
+document.getElementById("greenLabel"),
+document.getElementById("blueLabel")
+];
 const blurLabel = document.getElementById("blurLabel");
 const opacityLabel = document.getElementById("opacityLabel");
 
 
+
 //EVENTLISTENER
-blurInput.addEventListener("input", function() {
-	blur = blurInput.value / 10;
-	updateCode();
-});
+blurInput.addEventListener("input", function () {
+	updateCode()});
 
-opacityInput.addEventListener("input", function() {
-	opacity = opacityInput.value / 100;
-	updateCode();
-});
-
-
-//FUNCTIONS
-/* Function to toggle border */
-function toggleBorder() {
-	if(haveBorder) {
-		haveBorder = false;
-	}else {
-		haveBorder = true;
-	}
-	updateCode();
+opacityInput.addEventListener("input", function () {
+	updateCode()});
+for(i of rgbInput){
+	i.addEventListener("input", function () {
+	updateCode()});
 }
 
-/* Function to update the whole HTML when any changes are made */
-function updateCode() {
-	cssCode = `background: rgba( 255, 255, 255, ${opacity} );
+
+//OBJECTS
+var glassProperty = {
+	red : 225,
+	blue : 225,
+	green : 225,
+	alpha : 3.5,
+	blur : 12.5,
+	haveBorder : true,
+	getCssCode : function() {
+		var code = `background: rgba( ${this.red}, ${this.green}, ${this.blue}, ${this.alpha} );
 box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
-backdrop-filter: blur( ${blur}px );
--webkit-backdrop-filter: blur( ${blur}px );
+backdrop-filter: blur( ${this.blur}px );
+-webkit-backdrop-filter: blur( ${this.blur}px );
 border-radius: 10px;
 `;
-if(haveBorder) {
-	cssCode += `border: 1px solid rgba( 255, 255, 255, 0.18 );`;
+	if(this.haveBorder) {
+		code += `border: 1px solid rgba( 255, 255, 255, 0.18 );`;}
+		return code;
+	},
 }
-	outputDisplay.value = cssCode;
+
+//FUNCTIONS
+function updateCode() {
+	glassProperty.blur = blurInput.value / 10;
+	glassProperty.alpha = opacityInput.value / 100;
+	
+	glassProperty.red = rgbInput[0].value;
+	glassProperty.green = rgbInput[1].value;
+glassProperty.blue = rgbInput[2].value;
+	
+	outputDisplay.value = glassProperty.getCssCode();
 	for(var i of demoDisplay) {
-		i.style = cssCode;
+		i.style = glassProperty.getCssCode();
+		}
+	
+	blurLabel.innerHTML = `Blur: ${glassProperty.blur}`;
+	opacityLabel.innerHTML = `Opacity: ${glassProperty.alpha}`;
+	
+	rgbLabel[0].innerHTML = `red: ${glassProperty.red}`;
+	rgbLabel[1].innerHTML = `green: ${glassProperty.green}`;
+	rgbLabel[2].innerHTML = `blue: ${glassProperty.blue}`;
+}
+	
+function toggleBorder() {
+	if(glassProperty.haveBorder) {
+		glassProperty.haveBorder = false;
+	}else {
+		glassProperty.haveBorder = true;
 	}
-	blurLabel.innerHTML = `Blur: ${blur}`;
-	opacityLabel.innerHTML = `Opacity: ${opacity}`;
+	updateCode();
 }
 
 /* Function to copy the CSS code which has been generated */
@@ -70,54 +100,6 @@ function copyText(textId) {
   
 }
 
-/* color picker */
-const pickr = Pickr.create({
-    el: '.color-picker',
-    theme: 'monolith', // or 'classic', or 'nano'
-    useAsButton: true,
-    default: `#ffffff`,
-    defaultRepresentation: 'HEX',
-
-    swatches: [
-        'rgba(244, 67, 54, 1)',
-        'rgba(233, 30, 99, 0.95)',
-        'rgba(156, 39, 176, 0.9)',
-        'rgba(103, 58, 183, 0.85)',
-        'rgba(63, 81, 181, 0.8)',
-        'rgba(33, 150, 243, 0.75)',
-        'rgba(3, 169, 244, 0.7)',
-        'rgba(0, 188, 212, 0.7)',
-        'rgba(0, 150, 136, 0.75)',
-        'rgba(76, 175, 80, 0.8)',
-        'rgba(139, 195, 74, 0.85)',
-        'rgba(205, 220, 57, 0.9)',
-        'rgba(255, 235, 59, 0.95)',
-        'rgba(255, 193, 7, 1)'
-    ],
-
-    components: {
-
-        // Main components
-        preview: true,
-        opacity: true,
-        hue: true,
-
-        // Input / output Options
-        interaction: {
-            hex: true,
-            rgba: false,
-            hsla: false,
-            hsva: false,
-            cmyk: false,
-            input: true,
-            clear: true,
-            save: true
-        }
-    }
-});
 
 //MAIN FLOW
 updateCode();
-if(screen.width < 800)	{
-	outputDisplay.rows = 10;
-}
