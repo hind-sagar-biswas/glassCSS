@@ -43,7 +43,7 @@ var glassProperty = {
 	blue : 225,
 	green : 225,
 	alpha : 3.5,
-	blur : 12.5,
+	blur : 4,
 	haveBorder : true,
 	getCssCode : function() {
 		var code = `background: rgba( ${this.red}, ${this.green}, ${this.blue}, ${this.alpha} );
