@@ -5,9 +5,11 @@
 }
 body{
 	width: 100vw;
-	height: 100vh;
-	background: black;
-	background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIexFnuY5gTWSzGbkpzDV0dia3F5pYPLG_iA&usqp=CAU);
+	min-height: 100vh;
+	font-family: sans-serif;
+	font-size: 12px;
+	background: #7f98ff;
+	background: url(background.jpeg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -15,26 +17,60 @@ body{
 .pad{
 	padding: 10px;
 }
-#result{
-	width: 100%;
-	outline: none !important;
-	padding: 10px;
+#generator div.pad, .cont{
+	background: #3fb6ff;
 	color: white;
-	background: rgba( 255, 255, 255, 0.40 );
+	border-radius: 10px;
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.40 );
+}
+.cont{
+	padding: 20px;
+}
+.dark-glass{
+	color: white;
+	background: rgba( 0, 0, 0, 0.40 );
 	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.40 );
 	backdrop-filter: blur( 5px );
 -webkit-backdrop-filter: blur( 4px );
 	border-radius: 10px;
 	border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
-#showDemo{
-	color: white;
+#result{
+	width: 100%;
+	outline: none !important;
+	padding: 10px;
 }
-#clickToCopy{
-	background: rgba( 255, 255, 255, 0.40 );
-	box-shadow: 0 16px 32px 0 rgba( 31, 38, 135, 0.80 );
-	backdrop-filter: blur( 5px );
--webkit-backdrop-filter: blur( 5px );
+.demoGroup{
+	position: relative;
+	height: 240px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#showDemo{
+	color: grey;
+	height: 240px;
+	width: 270px;
+	left: 30px;
+}
+#up{
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: -5px;
+	left: 5px;
+	z-index: 1;
+}
+#down{
+	width: 80px;
+	height: 80px;
+	bottom: -25px;
+	right: 0px;
+	position: absolute;
+}
+#clickToCopy, .color-picker{
+	background: #3fb6ff;
+	box-shadow: 0 4px 7px 0 rgba( 31, 38, 135, 0.80 );
 	border-radius: 10px;
 	width: 200px;
 	height: 50px;
@@ -47,19 +83,62 @@ body{
 	outline: none !important;
 	transition: all 0.3s;
 }
+#color-display{
+	width: 50px;
+}
 #clickToCopy:hover{
-	color: grey;
-	background: rgba( 255, 255, 255, 0.7 );
+	background: #3fb6ffee;
 }
 #clickToCopy:click{
-	box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.80 );
+	box-shadow: 0 2px 4px 0 rgba( 31, 38, 135, 0.80 );
 }
 header{
-	background: rgba( 255, 255, 255, 0.35 );
+	background: rgba( 225, 225, 225, 0.3 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
+	backdrop-filter: blur( 12.5px );
+	-webkit-backdrop-filter: blur( 12.5px );
 	width: 100vw;
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
-backdrop-filter: blur( 4px );
--webkit-backdrop-filter: blur( 4px );
-border-radius: 0px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+#oval1{
+	position: absolute;
+	top: -20px;
+	left: -40px;
+	z-index: -100;
+}
+#oval2{
+	position: absolute;
+	top: 130px;
+	right: 0px;
+	z-index: -200;
+}
+.glass{
+	background: rgba( 225, 225, 225, 0.3 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.30 );
+	backdrop-filter: blur( 12.5px );
+	-webkit-backdrop-filter: blur( 12.5px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+@media(min-width: 768px){
+	.flex{
+		display: flex;
+		justify-content: space-around;
+	}
+	.one-third{
+	width: calc(100% / 3.1);
+	}
+	#oval1{
+		top: -20px;
+		left: 30vw;
+	}
+	#oval2{
+		top: 130px;
+		right: 30vw;
+	}
+}
+@media(max-width: 768px){
+	#result{
+		height: 255px;
+	}
 }
